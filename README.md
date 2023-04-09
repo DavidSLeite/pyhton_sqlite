@@ -1,2 +1,1 @@
-# pyhton_sqlite
-Repositório com CRUD em BD SQLITE3
+# Repositório com CRUD em BD SQLITE3
