@@ -65,7 +65,7 @@ def create_user(con, cursor):
         print("Falha ao cadastrar usuário, erro: ", error)
 
 
-def lista_usuarios(con, cursor):
+def list_user(con, cursor):
     query = f"""
         SELECT 
             NOME,
@@ -84,7 +84,7 @@ def lista_usuarios(con, cursor):
     except sqlite3.Error as error:
         print("Erro ao listar users, erro: ", error)
 
-def atualiza_senha(con, cursor):
+def update_pass(con, cursor):
 
     login = input("Digite seu Login: ")
     nova_senha = getpass.getpass("Nova senha: ")
@@ -101,7 +101,7 @@ def atualiza_senha(con, cursor):
     except sqlite3.Error as error:
         print("Erro ao atualizar usuário, erro: ", error)
 
-def deletar_user(con, cursor):
+def delete_user(con, cursor):
 
     login = input("Digite seu Login: ")
 
@@ -142,11 +142,11 @@ if status_login == 1:
         if opt == "1":
             create_user(con, cursor)
         elif opt == "2":
-            lista_usuarios(con, cursor)
+            list_user(con, cursor)
         elif opt == "3":
-            atualiza_senha(con, cursor)
+            update_pass(con, cursor)
         elif opt == "4":
-            deletar_user(con, cursor)
+            delete_user(con, cursor)
         elif opt == "0":
             interacao = 's'
             print("SAINDO")
